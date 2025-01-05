@@ -1,0 +1,23 @@
+php artisan serve
+
+php artisan make:view contact
+php artisan make:view admin.login  ---> eg. foldername.file_name
+
+ php artisan make:controller UserController
+
+
+php artisan make:view common.header 
+ php artisan make:component messageBanner
+ php artisan make:view user-form
+
+php artisan make:controller UserForm
+
+php artisan lang:publish
+
+php artisan make:rule Uppercase
+
+PHP artisan make:middleware AgeCheck
+
+php artisan migrate 
+
+hp artisan make:model Student --> if table tabe in databse is "studets" as in plural and in Model "Student" as Singular
