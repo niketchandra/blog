@@ -13,7 +13,8 @@ use App\Http\Middleware\CountryCheck;
 //database Related
 use App\Http\Controllers\BasicDbController;
 use App\Http\Controllers\StudentInfoController;
-
+//For API
+use App\Http\Controllers\HttpClientController;
 ##This all are kind of static routing
 
 Route::get('/', function () {
@@ -104,3 +105,6 @@ Route::get('userdetails', [BasicDbController::class, 'userlist']);
 ##Database Related from Model
 Route::get ('studentdetails', [StudentInfoController::class, 'studentdetails']);
 Route::get ('studentinfo', [StudentInfoController::class, 'studentinfo1']);
+
+## Crete Route for API calling from HttpClientController
+Route::get ('httpclientshow',[HttpClientController::class, 'getAPIdata']);
