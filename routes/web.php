@@ -15,6 +15,8 @@ use App\Http\Controllers\BasicDbController;
 use App\Http\Controllers\StudentInfoController;
 //For API
 use App\Http\Controllers\HttpClientController;
+
+use App\Http\Controllers\DataDbController;
 ##This all are kind of static routing
 
 Route::get('/', function () {
@@ -108,3 +110,10 @@ Route::get ('studentinfo', [StudentInfoController::class, 'studentinfo1']);
 
 ## Crete Route for API calling from HttpClientController
 Route::get ('httpclientshow',[HttpClientController::class, 'getAPIdata']);
+
+
+##Database Related from Controller
+Route::get ('datadb',[DataDbController::class, 'showdata']);
+Route::get ('adddata',[DataDbController::class, 'insertdata']);
+Route::get ('updatedata',[DataDbController::class, 'updatedata']);
+Route::get ('deletedata',[DataDbController::class, 'deletedata']);

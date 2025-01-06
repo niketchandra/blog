@@ -13,3 +13,7 @@
 <div style="background-color:grey; color: Black">
  <p>Principle Header -->   <a href="principle/dashboard">Principle Dashbboard (MiddleWare Check Applied)</a> | <a href="principle/profile">Principle Profile (MiddleWare Check Applied)</a> <br> Using Miidleware Check Request --> <a href="principle/dashboard?age=20&country=India">Principle Dashboard</a> | <a href="principle/profile?age=20&country=India">Principle Profile</a> | <a href="principle/about?age=20">Principle About from View</a>
 </div>
+
+<div style="background-color:lightgreen; color: Black">
+ <p>Database and API Header -->   
+
