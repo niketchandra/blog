@@ -19,6 +19,7 @@ use App\Http\Controllers\HttpClientController;
 use App\Http\Controllers\DataDbController;
 
 use App\Http\Controllers\RouteTestController;
+use App\Http\Controllers\HttpRequestController;
 ##This all are kind of static routing
 
 Route::get('/', function () {
@@ -128,3 +129,8 @@ Route::put('RouteTestput', [RouteTestController::class, 'put']);
 Route::patch('RouteTestpatch', [RouteTestController::class, 'patch']);
 Route::delete('RouteTestdelete', [RouteTestController::class, 'delete']);
 
+//how route work on diffrect route methods (ANY/MATCH)
+
+//how HTTP Request work.
+Route::view('HttpRequest', 'HttpRequestView');
+Route::post('HttpRequestPost', [HttpRequestController::class, 'response']);
