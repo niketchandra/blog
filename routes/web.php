@@ -17,6 +17,8 @@ use App\Http\Controllers\StudentInfoController;
 use App\Http\Controllers\HttpClientController;
 
 use App\Http\Controllers\DataDbController;
+
+use App\Http\Controllers\RouteTestController;
 ##This all are kind of static routing
 
 Route::get('/', function () {
@@ -117,3 +119,12 @@ Route::get ('datadb',[DataDbController::class, 'showdata']);
 Route::get ('adddata',[DataDbController::class, 'insertdata']);
 Route::get ('updatedata',[DataDbController::class, 'updatedata']);
 Route::get ('deletedata',[DataDbController::class, 'deletedata']);
+
+//how route work on diffrect route methods (get/post/put/patch/delete)
+Route::view ('RouteTest', 'RouteTestView');
+Route::get('RouteTestget', [RouteTestController::class, 'get']);
+Route::post('RouteTestpost', [RouteTestController::class, 'post']);
+Route::put('RouteTestput', [RouteTestController::class, 'put']);
+Route::patch('RouteTestpatch', [RouteTestController::class, 'patch']);
+Route::delete('RouteTestdelete', [RouteTestController::class, 'delete']);
+
