@@ -20,6 +20,8 @@ use App\Http\Controllers\DataDbController;
 
 use App\Http\Controllers\RouteTestController;
 use App\Http\Controllers\HttpRequestController;
+
+use App\Http\Controllers\SessionController;
 ##This all are kind of static routing
 
 Route::get('/', function () {
@@ -134,3 +136,10 @@ Route::delete('RouteTestdelete', [RouteTestController::class, 'delete']);
 //how HTTP Request work.
 Route::view('HttpRequest', 'HttpRequestView');
 Route::post('HttpRequestPost', [HttpRequestController::class, 'response']);
+
+//Work on session
+Route::view('SessionView','SessionView');
+Route::post('SessionViewData', [SessionController::class, 'SessionViewData']);
+Route::post('SessionLogin', [SessionController::class, 'SessionLogin']);
+Route::view('SessionProfileView', 'SessionProfileView');
+Route::get('SessionLogout', [SessionController::class, 'SessionLogout']);

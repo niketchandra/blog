@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class RouteTest-AnyMatchController extends Controller
+class RouteTestAnyMatchController extends Controller
 {
     //
 }
