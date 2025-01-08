@@ -22,6 +22,7 @@ use App\Http\Controllers\RouteTestController;
 use App\Http\Controllers\HttpRequestController;
 
 use App\Http\Controllers\SessionController;
+use App\Http\Controllers\SessionFlashKeepController;
 ##This all are kind of static routing
 
 Route::get('/', function () {
@@ -143,3 +144,7 @@ Route::post('SessionViewData', [SessionController::class, 'SessionViewData']);
 Route::post('SessionLogin', [SessionController::class, 'SessionLogin']);
 Route::view('SessionProfileView', 'SessionProfileView');
 Route::get('SessionLogout', [SessionController::class, 'SessionLogout']);
+
+//Work on session flash and Keep
+Route::view('SessionFlashKeep', 'SessionFlashKeep');
+Route::post('adddata', [SessionFlashKeepController::class, 'flashdata']);
