@@ -23,3 +23,5 @@ php artisan migrate
 php artisan make:model Student --> if table tabe in databse is "studets" as in plural and in Model "Student" as Singular
 
 php artisan model:show Student  --> to get tabale data using command
+
+php artisan storage:link \\Link storage/app/public to /public/storage folder

@@ -23,6 +23,8 @@ use App\Http\Controllers\HttpRequestController;
 
 use App\Http\Controllers\SessionController;
 use App\Http\Controllers\SessionFlashKeepController;
+
+use App\Http\Controllers\FileUploadController;
 ##This all are kind of static routing
 
 Route::get('/', function () {
@@ -148,3 +150,7 @@ Route::get('SessionLogout', [SessionController::class, 'SessionLogout']);
 //Work on session flash and Keep
 Route::view('SessionFlashKeep', 'SessionFlashKeep');
 Route::post('adddata', [SessionFlashKeepController::class, 'flashdata']);
+
+//FileUpload and view Route
+Route::view('fileupload', 'FileUpload');
+Route::post('upload', [FileUploadController::class, 'upload']);
