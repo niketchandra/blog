@@ -12,7 +12,7 @@
        <input type="text" name="batch" value="{{$data->batch}}" placeholder="Enter Student Batch">
        <br>
        <br>
-       <button type="submit">Edit Student</button>
+       <button type="submit">Update Student</button>
     </form>
     </br>
        <a href="/student/studentDetails">Cancel</a>

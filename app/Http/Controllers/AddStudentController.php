@@ -26,7 +26,7 @@ class AddStudentController extends Controller
     public function list(){
        // return "student list";
       //  $studentData=Student::all(); --> THis will show all the data
-         $studentData=Student::paginate(3); // to use pagination and inside bracket limit of data want to show in single
+         $studentData=Student::paginate(3); // to use pagination and inside bracket limit of data want to show in si
         return view('studentdetails', ['students'=>$studentData]);
        }
 
@@ -47,12 +47,19 @@ class AddStudentController extends Controller
     
     public function editStudent(Request $request, $id) {
        // return $request->input();
-        $student=Student::find($id);
-        $student->name=$request->name;
-        $student->email=$request->email;
-        $student->phone=$request->phone;
-        $student->batch=$request->batch;
-        if($student->save()){
+        // $student=Student::find($id);
+        // $student->name=$request->name;
+        // $student->email=$request->email;
+        // $student->phone=$request->phone;
+        // $student->batch=$request->batch;
+        $student = Student::where('id', $id)->update([
+            'name' => $request->name,
+            'email' => $request->email,
+            'phone' => $request->phone,
+            'batch' => $request->batch,
+        ]);
+      //  if($student->save()){
+        if($student){
             return redirect('student/studentDetails');
         }
         else{
