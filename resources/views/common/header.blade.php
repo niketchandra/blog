@@ -7,7 +7,7 @@
 </div>
 
 <div style="background-color:lightblue; color: Red">
- <p>Teacher Header -->   <a href="dashboard">Teacher Dashbboard</a> | <a href="about">teacher About</a> | <a href="profile">teacher Profile</a> 
+ <p>Teacher Header -->   <a href="dashboard">{{__('homeheader.Teacher Dashbboard')}}</a> | <a href="about">{{__('homeheader.Teacher About')}}</a> | <a href="profile">{{__('homeheader.Teacher Profile')}}</a> 
 </div>
 
 <div style="background-color:grey; color: Black">

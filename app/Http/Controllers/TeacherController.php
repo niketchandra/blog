@@ -11,7 +11,7 @@ class TeacherController extends Controller
         return "This is Teacher dashboard";
     }
     public function tabout($name){
-        //return view('Teacher.about');
+        //return view('Teacher.about8');
         return "This is about Teacher --> $name dashboard" ;
     }
     public function tprofile(){

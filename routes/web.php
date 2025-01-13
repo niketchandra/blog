@@ -25,8 +25,13 @@ use App\Http\Controllers\SessionController;
 use App\Http\Controllers\SessionFlashKeepController;
 
 use App\Http\Controllers\FileUploadController;
+use App\Http\Controllers\AddStudentController;
 ##This all are kind of static routing
 
+Route::get('/{lang}', function ($lang) {
+    App::setlocale($lang);
+    return view('home');
+});
 Route::get('/', function () {
     return view('home');
 });
@@ -80,7 +85,11 @@ Route::get('dunamicuserprofile', [UserProfile::class, 'DynamicUserProfile'])->na
 
 
 ##Student Route group
+
+
 Route::prefix('student')->group(function () {
+    Route::view('studentadd', 'AddStudent');
+    Route::post('addstudent', [AddStudentController::class, 'addStudent']);
     Route::get('dashboard', [StudentController::class, 'dashboard']);
     Route::get('about/{name}', [StudentController::class, 'about']);
     Route::get('profile', [StudentController::class, 'profile']);
@@ -92,6 +101,8 @@ Route::controller(TeacherController::class)->group(function (){
     Route::get('about/{name}', 'tabout');
     Route::get('profile', 'tprofile');
 });
+
+####Teacher Route grouping with controller for Local Language
 
 
 ##Use middleware from View and Controller
@@ -154,3 +165,4 @@ Route::post('adddata', [SessionFlashKeepController::class, 'flashdata']);
 //FileUpload and view Route
 Route::view('fileupload', 'FileUpload');
 Route::post('upload', [FileUploadController::class, 'upload']);
+
