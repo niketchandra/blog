@@ -15,4 +15,9 @@ class StudentInfoController extends Controller
         $info = \App\Models\Student::all();
         return view('studentinfo',['studentslist'=>$info]);
      }
+
+     public function list(){
+      
+     }
+
 }

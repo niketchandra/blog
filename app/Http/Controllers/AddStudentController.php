@@ -21,4 +21,10 @@ class AddStudentController extends Controller
            return "Data has not been saved";
        }
     }
+
+    public function list(){
+       // return "student list";
+        $studentData=Student::all();
+        return view('studentdetails', ['students'=>$studentData]);
+       }
 }

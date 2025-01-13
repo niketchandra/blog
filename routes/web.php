@@ -85,11 +85,12 @@ Route::get('dunamicuserprofile', [UserProfile::class, 'DynamicUserProfile'])->na
 
 
 ##Student Route group
-
-
 Route::prefix('student')->group(function () {
     Route::view('studentadd', 'AddStudent');
     Route::post('addstudent', [AddStudentController::class, 'addStudent']);
+    Route::get('studentDetails', [AddStudentController::class, 'list']);
+    ################## END data are intract with DB ################
+    ################## Below are the dummy view pages ################
     Route::get('dashboard', [StudentController::class, 'dashboard']);
     Route::get('about/{name}', [StudentController::class, 'about']);
     Route::get('profile', [StudentController::class, 'profile']);
