@@ -10,6 +10,7 @@
              <th>Phone</th>
              <th>Batch</th>
              <th></th>
+             <th></th>
          </tr>
          @foreach($students as $student)
          <tr>
@@ -17,6 +18,7 @@
              <td>{{$student->email}}</td>
              <td>{{$student->phone}}</td>
              <td>{{$student->batch}}</td>
+             <td> <a href="{{'edit/'.$student->id}}">Edit</a>
              <td> <a href="{{'delete/'.$student->id}}">Delete</a>
          </tr>
          @endforeach

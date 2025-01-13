@@ -29,11 +29,18 @@ class AddStudentController extends Controller
         return view('studentdetails', ['students'=>$studentData]);
        }
 
-       public function delete($id){
+    public function delete($id){
        //  echo $isDeleted=Student::destroy($id); //if echo is 1 that means its delted
             $isDeleted=Student::destroy($id);
             if ($isDeleted){ 
                 return redirect('student/studentDetails');
             }
         }
+
+    public function edit($id){
+        $student=Student::find($id);
+         //   return $student;
+         return view('StudentEdit', ['data'=>$student]);
+
+        }  
 }
