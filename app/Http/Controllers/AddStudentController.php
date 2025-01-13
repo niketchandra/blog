@@ -15,7 +15,8 @@ class AddStudentController extends Controller
        $student->phone=$request->phone;
        $student->save();
        if($student){
-           return "Data has been saved";
+        //    /return "Data has been saved";
+           return redirect('student/studentDetails');
        }
        else{
            return "Data has not been saved";
@@ -27,4 +28,12 @@ class AddStudentController extends Controller
         $studentData=Student::all();
         return view('studentdetails', ['students'=>$studentData]);
        }
+
+       public function delete($id){
+       //  echo $isDeleted=Student::destroy($id); //if echo is 1 that means its delted
+            $isDeleted=Student::destroy($id);
+            if ($isDeleted){ 
+                return redirect('student/studentDetails');
+            }
+        }
 }
