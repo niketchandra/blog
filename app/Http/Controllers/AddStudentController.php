@@ -25,7 +25,8 @@ class AddStudentController extends Controller
 
     public function list(){
        // return "student list";
-        $studentData=Student::all();
+      //  $studentData=Student::all(); --> THis will show all the data
+         $studentData=Student::paginate(3); // to use pagination and inside bracket limit of data want to show in single
         return view('studentdetails', ['students'=>$studentData]);
        }
 

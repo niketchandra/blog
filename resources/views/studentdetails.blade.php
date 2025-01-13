@@ -26,6 +26,12 @@
              <td> <a href="{{'delete/'.$student->id}}">Delete</a>
          </tr>
          @endforeach
- 
+        </table>
+        {{$students->links()}}
  </div>
+<style>
+.w-5.h-5{
+    width:20px;
+}
+</style>
  
