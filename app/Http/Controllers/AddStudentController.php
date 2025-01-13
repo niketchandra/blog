@@ -42,5 +42,20 @@ class AddStudentController extends Controller
          //   return $student;
          return view('StudentEdit', ['data'=>$student]);
 
-        }  
+        }
+    
+    public function editStudent(Request $request, $id) {
+       // return $request->input();
+        $student=Student::find($id);
+        $student->name=$request->name;
+        $student->email=$request->email;
+        $student->phone=$request->phone;
+        $student->batch=$request->batch;
+        if($student->save()){
+            return redirect('student/studentDetails');
+        }
+        else{
+            return "error while updateing data";
+        }
+    }
 }

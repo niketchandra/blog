@@ -91,6 +91,7 @@ Route::prefix('student')->group(function () {
     Route::get('studentDetails', [AddStudentController::class, 'list']);
     Route::get('delete/{id}', [AddStudentController::class, 'delete']);
     Route::get('edit/{id}', [AddStudentController::class, 'edit']);
+    Route::put('edit-student/{id}', [AddStudentController::class, 'editStudent']);
     ################## END data are intract with DB ################
     ################## Below are the dummy view pages ################
     Route::get('dashboard', [StudentController::class, 'dashboard']);
