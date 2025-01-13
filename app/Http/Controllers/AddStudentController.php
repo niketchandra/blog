@@ -58,4 +58,11 @@ class AddStudentController extends Controller
             return "error while updateing data";
         }
     }
+
+    public function search(Request $request){
+      //  return $request->search;
+      $searchstudent=Student::where('name','like',"%$request->search%")->get();
+    //  return $searchstudent;
+      return view('studentdetails', ['students'=>$searchstudent, 'search'=>$request->search]);
+    }
 }

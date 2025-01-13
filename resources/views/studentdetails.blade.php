@@ -2,6 +2,10 @@
     <h2>Student list from Database  using Model</h2>
  Full Data --> <!--  {{ print_r($students); }} --> </br>
  
+ <form action="/student/search" method="get">
+    Search Student from list --> <input type="text" placeholder="Search Student with Name"  name="search" value="{{@$search}}" />
+    <button>Search</button>
+ </form>
  </br>
      <table border="1px">
          <tr>
