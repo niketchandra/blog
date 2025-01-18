@@ -73,4 +73,17 @@ class AddStudentController extends Controller
     //  return $searchstudent;
       return view('studentdetails', ['students'=>$searchstudent, 'search'=>$request->search]);
     }
+
+    public function deleteMultiple(Request $request){
+       // return $request->ids;
+        $isDeleteResult=Student::destroy($request->ids);
+        if ($isDeleteResult){
+            echo "Student Deleted";
+            return redirect('student/studentDetails');
+        }
+        else{
+            "Student not deleted";
+        }
+        
+    }
 }

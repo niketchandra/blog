@@ -7,8 +7,11 @@
     <button>Search</button>
  </form>
  </br>
+ <form action="delete-multi" method="post">
+    @csrf
      <table border="1px">
          <tr>
+             <th>Select</th>
              <th>Name</th>
              <th>Email</th>
              <th>Phone</th>
@@ -18,6 +21,7 @@
          </tr>
          @foreach($students as $student)
          <tr>
+             <td><input type="checkbox" name="ids[]" value="{{$student->id}}" /></td>
              <td>{{$student->name}}</td>
              <td>{{$student->email}}</td>
              <td>{{$student->phone}}</td>
@@ -26,7 +30,11 @@
              <td> <a href="{{'delete/'.$student->id}}">Delete</a>
          </tr>
          @endforeach
+         
         </table>
+        <button> Delete</button>
+        </form>
+        <br>
         {{$students->links()}}
  </div>
 <style>
