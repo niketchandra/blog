@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Student;
+use App\Models\StudentFileUpload;
 
 class AddStudentController extends Controller
 {
@@ -86,4 +87,21 @@ class AddStudentController extends Controller
         }
         
     }
+
+    public function studentfileupload(Request $request){
+        $path=$request->file('file')->store('public');
+        $fileName=explode('/',$path);
+       // return $fileName[1];
+
+        $fileupload= new StudentFileUpload();
+        $fileupload->file_name=$fileName[1];
+        $fileupload->save();
+
+        if($fileupload){
+        return redirect('student/student-FileUpload');
+        }
+        else{
+            "error while File Uploading";
+        }
+    } 
 }

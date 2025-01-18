@@ -1,3 +1,4 @@
+@include('common.studentHeader')
 <h2> Edit Student Info </h2>
 <div>
     <form action="/student/edit-student/{{$data->id}}" method="post">

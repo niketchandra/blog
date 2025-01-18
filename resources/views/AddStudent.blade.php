@@ -1,3 +1,5 @@
+@include('common.studentHeader')
+<br>
 <div>
    <form action="addstudent" method="post">
       @csrf

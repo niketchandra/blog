@@ -94,6 +94,8 @@ Route::prefix('student')->group(function () {
     Route::put('edit-student/{id}', [AddStudentController::class, 'editStudent']);
     Route::get('search', [AddStudentController::class, 'search']);
     Route::post('delete-multi', [AddStudentController::class, 'deleteMultiple']);
+    Route::view('student-FileUpload', 'studentFileUpload');
+    Route::post('fileupload', [AddStudentController::class, 'studentfileupload']);
     ################## END data are intract with DB ################
     ################## Below are the dummy view pages ################
     Route::get('dashboard', [StudentController::class, 'dashboard']);

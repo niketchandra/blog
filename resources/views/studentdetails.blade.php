@@ -1,3 +1,4 @@
+@include('common.studentHeader')
 <div>
     <h2>Student list from Database  using Model</h2>
  Full Data --> <!--  {{ print_r($students); }} --> </br>
