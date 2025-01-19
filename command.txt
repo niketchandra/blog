@@ -38,4 +38,4 @@ php artisan migrate --path .\database\migrations\2025_01_19_113107_create_admin_
 
 php artisan migrate:status
 
- php artisan db:seed --class=AdminSeeder
+php artisan db:seed --class=AdminSeeder
