@@ -20,8 +20,21 @@ class Student extends Model
             return "+91-".$value;
         }
 
-        function getBatchAttribute($value){
-            return "Year ".$value;
+        // function getBatchAttribute($value){
+        //     return "Year ".$value;
+        // }
+
+        //  Accessors END
+
+        // Introducing Mutators --> which modify the data before saving it into database
+
+        function setNameAttribute($val){
+            $this->attributes['name']=ucfirst($val);
         }
 
-}
+        function setPhoneAttribute($val){
+            $this->attributes['phone']="+91-".$val;
+        }
+
+        // Mutators End
+ }
