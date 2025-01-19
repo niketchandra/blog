@@ -103,5 +103,9 @@ class AddStudentController extends Controller
         else{
             "error while File Uploading";
         }
-    } 
+    }
+    
+    public function viewfile(){
+        
+    }
 }
