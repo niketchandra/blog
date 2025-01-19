@@ -29,3 +29,11 @@ php artisan storage:link \\Link storage/app/public to /public/storage folder
 php artisan make:migration create_admin_table
 
 php artisan migrate 
+
+php artisan migrate:rollback --step 1
+
+php artisan migrate:reset
+
+php artisan migrate --path .\database\migrations\2025_01_19_113107_create_admin_table.php
+
+php artisan migrate:status
