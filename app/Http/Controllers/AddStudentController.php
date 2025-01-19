@@ -29,6 +29,11 @@ class AddStudentController extends Controller
       //  $studentData=Student::all(); --> THis will show all the data
          $studentData=Student::paginate(3); // to use pagination and inside bracket limit of data want to show in si
         return view('studentdetails', ['students'=>$studentData]);
+        
+        // Introducing Accessors --> which is use to modify data only on UI, without change in database
+        
+
+
        }
 
     public function delete($id){
